@@ -207,15 +207,17 @@ La evaluación realizada corresponde a una verificación funcional del monitor, 
 
 ## Caso 1 — Bradicardia
 
-<img width="1200" height="1600" alt="image" src="https://github.com/user-attachments/assets/3a392aad-e943-4f69-8a82-3582c11421be" />
 
 
 ### Configuración
 
+
+<img width="1448" height="1086" alt="image" src="https://github.com/user-attachments/assets/41725158-61f1-426e-b0eb-331e0307aec6" />
+
+
 * BPM simulado: 40
 * SpO₂ simulado: 95%
 
-* <img width="1600" height="1200" alt="image" src="https://github.com/user-attachments/assets/8b6c0339-8e8f-4f5d-bad1-eb5411942f54" />
 
 
 ### Resultados
