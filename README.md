@@ -14,15 +14,16 @@
 
 ---
 
+
 # INTRODUCCIÓN
 
-En el entorno clínico hospitalario, el monitoreo continuo de signos vitales constituye una de las herramientas más importantes para evaluar el estado fisiológico de un paciente. Variables como la frecuencia cardíaca (BPM), la saturación periférica de oxígeno (SpO₂), la frecuencia respiratoria y la presión arterial permiten detectar alteraciones hemodinámicas que pueden representar un riesgo para la vida del paciente.
+En el entorno clínico hospitalario, el monitoreo continuo de signos vitales es fundamental para evaluar el estado fisiológico de un paciente. Variables como la frecuencia cardíaca, la saturación periférica de oxígeno, la presión arterial y la frecuencia respiratoria permiten identificar alteraciones que pueden representar un riesgo clínico si no se detectan oportunamente [2], [5].
 
-Actualmente, los monitores multiparámetro son ampliamente utilizados en unidades de cuidados intensivos (UCI), salas de cirugía, urgencias y hospitalización. Estos equipos deben ser capaces de detectar cambios fisiológicos de manera rápida y precisa, además de generar alarmas visuales y sonoras cuando los parámetros salen de los límites fisiológicos configurados.
+Actualmente, los monitores multiparámetro son ampliamente utilizados en servicios como urgencias, cirugía, hospitalización y unidades de cuidado intensivo. Estos equipos permiten visualizar variables fisiológicas en tiempo real y activar alarmas cuando los parámetros salen de los límites configurados [5], [6].
 
-Para garantizar el correcto funcionamiento de estos dispositivos biomédicos, se utilizan simuladores de parámetros fisiológicos, como el Pronk OxSim OX-1, el cual permite recrear condiciones clínicas controladas sin necesidad de utilizar pacientes reales. Este tipo de simuladores son fundamentales en procesos de mantenimiento biomédico, metrología, calibración y verificación funcional.
+Para garantizar el correcto funcionamiento de estos dispositivos se emplean simuladores biomédicos, como el Pronk OxSim OX-1, el cual permite recrear condiciones clínicas controladas sin necesidad de utilizar pacientes reales. Esto resulta útil en procesos de mantenimiento biomédico, metrología y verificación funcional [4].
 
-En esta práctica se trabajó con el monitor de signos vitales uMEC 100 y el simulador Pronk OxSim OX-1, con el propósito de evaluar el comportamiento del monitor ante diferentes condiciones fisiológicas y patológicas simuladas, como:
+En esta práctica se trabajó con el monitor de signos vitales uMEC 100 y el simulador Pronk OxSim OX-1, con el propósito de evaluar el comportamiento del monitor frente a diferentes condiciones fisiológicas y patológicas simuladas, como bradicardia, taquicardia, hipoxemia y baja perfusión.
 
 * Bradicardia
 * Taquicardia
@@ -91,6 +92,15 @@ Cuando existe baja perfusión, la onda puede distorsionarse o disminuir su ampli
 
 ---
 
+## Principio de la pulsioximetría
+
+La pulsioximetría es una técnica óptica no invasiva que permite estimar la saturación periférica de oxígeno en sangre arterial. Su funcionamiento se basa en la emisión de luz roja e infrarroja a través del tejido, generalmente en un dedo, y en la medición de la luz absorbida por la hemoglobina oxigenada y desoxigenada [1].
+
+La señal medida tiene dos componentes: una componente continua, asociada a tejidos, piel, hueso y sangre venosa, y una componente pulsátil, relacionada con los cambios de volumen sanguíneo arterial durante cada ciclo cardíaco. A partir de esta componente pulsátil, el monitor estima la SpO₂ y la frecuencia de pulso [1], [2].
+
+En condiciones de baja perfusión periférica, movimiento del paciente, mala colocación del sensor o interferencia lumínica, la amplitud de la señal PPG puede disminuir o distorsionarse. Esto puede producir lecturas inestables o alarmas falsas, especialmente en pacientes con mala perfusión periférica [1], [3].
+
+
 ## Simulador Pronk OxSim OX-1
 
 El Pronk OxSim OX-1 es un simulador biomédico diseñado para verificar el funcionamiento de monitores de signos vitales y sensores de SpO₂.
@@ -153,26 +163,41 @@ Para colocar el uMEC 100 en modo monitor se debe:
 
 ## b. ¿Qué variables puede simular el Pronk OxSim OX-1?
 
-| Variable                | Descripción                      |
-| ----------------------- | -------------------------------- |
-| BPM                     | Simula frecuencia cardíaca       |
-| SpO₂                    | Simula saturación periférica     |
-| Baja perfusión          | Reduce amplitud de señal PPG     |
-| Condiciones patológicas | Simula alteraciones fisiológicas |
+El Pronk OxSim OX-1 es un simulador óptico de SpO₂ utilizado para verificar el funcionamiento de pulsioxímetros, sensores de SpO₂, cables de extensión y monitores de signos vitales. Este equipo permite simular señales ópticas similares a las generadas por un paciente real, de manera que el sensor del monitor pueda interpretar valores de saturación, frecuencia de pulso y perfusión [4].
+
+| Variable simulada | Descripción |
+| ----------------- | ----------- |
+| SpO₂ | Simula diferentes valores de saturación periférica de oxígeno. En la práctica se utilizaron valores como 85%, 95%, 98% y 99%. |
+| Frecuencia cardíaca / pulso | Simula diferentes frecuencias de pulso, como 40 bpm para bradicardia, 80 bpm como condición normal y 140 bpm para taquicardia. |
+| Índice de perfusión | Permite simular condiciones de perfusión normal o baja perfusión. En baja perfusión, la amplitud de la señal PPG disminuye y el monitor puede presentar lecturas menos estables. |
+| Condiciones fisiológicas y patológicas | A partir de la combinación de SpO₂, frecuencia de pulso y perfusión, se pueden representar escenarios como hipoxemia, bradicardia, taquicardia y baja perfusión periférica. |
 
 ---
 
 ## c. Tolerancias o errores máximos permitidos (EMP)
 
-| Parámetro | Error máximo permitido         |
-| --------- | ------------------------------ |
-| BPM       | ±3 BPM                         |
-| SpO₂      | ±2%                            |
-| Alarmas   | Activación rápida y detectable |
 
+En esta práctica, los errores se evaluaron comparando el valor configurado en el simulador OxSim OX-1 con el valor mostrado por el monitor uMEC 100. Esta comparación permite verificar funcionalmente si el monitor responde de forma adecuada ante condiciones simuladas.
+
+| Parámetro evaluado | Criterio usado en la práctica | Interpretación |
+| ------------------ | ----------------------------- | -------------- |
+| Frecuencia cardíaca / pulso | Diferencias pequeñas, cercanas a ±3 bpm | Aceptable si no cambia la interpretación de bradicardia, normalidad o taquicardia |
+| SpO₂ | Diferencias aproximadas de ±2% | Aceptable para una verificación funcional de pulsioximetría |
+| Alarmas | Activación visual y/o sonora ante valores fuera de límite | Deben activarse cuando el valor simulado supera el límite configurado |
+| Onda PPG | Observación cualitativa de amplitud, estabilidad y distorsión | Permite analizar la calidad de la señal y el efecto de la perfusión |
+
+La evaluación realizada corresponde a una verificación funcional del monitor, no a una calibración metrológica completa. Por esta razón, los errores se interpretaron como diferencias entre el valor simulado y el valor mostrado por el equipo [1], [4], [5].
 ---
 
 # PARTE B — PROCEDIMIENTO Y RESULTADOS
+## Tabla general de verificación de alarmas
+
+| Prueba | Límite configurado | Valor simulado | ¿Alarma activa? | Tiempo de respuesta | Observación |
+| ------ | ------------------ | -------------- | --------------- | ------------------- | ----------- |
+| Bradicardia | Límite inferior de FC configurado en el monitor | 40 bpm, SpO₂ 95% | No registrado | No registrado | Se observó frecuencia cardíaca baja en el monitor |
+| Hipoxemia | SpO₂ baja: 90% | 80 bpm, SpO₂ 85% | Sí | 5 s | Se activó la alarma por saturación baja |
+| SpO₂ alta / baja perfusión | SpO₂ alta: 97% | SpO₂ 99% en modo Low Perfusion | Sí | 5 s | Se observó alteración o disminución de la estabilidad de la onda PPG |
+| Taquicardia | Límite superior de FC configurado en el monitor | 140 bpm | Sí | No registrado | Se activó la alarma por frecuencia cardíaca elevada |
 
 ## Caso 1 — Bradicardia
 
@@ -232,24 +257,25 @@ No se evidenciaron errores significativos.
 ### Configuración
 
 * Modo: Low Perfusion
-* SpO₂: 99%
+* SpO₂ simulada: 99%
+* BPM monitor: 80
+* Límite superior de alarma SpO₂: 97%
 
 ### Resultados
 
-| Tiempo | BPM Monitor | SpO₂ Monitor |
-| ------ | ----------- | ------------ |
-| 1s     | 80          | 100          |
-| 2s     | 80          | 100          |
-| 3s     | 80          | 100          |
-| 4s     | 80          | 100          |
-| 5s     | 80          | 100          |
+| Tiempo | SpO₂ Simulada | SpO₂ Monitor | Error absoluto SpO₂ | BPM Monitor | ¿Alarma activa? |
+| ------ | ------------- | ------------ | ------------------- | ----------- | --------------- |
+| 1s     | 99            | 100          | 1                   | 80          | Sí |
+| 2s     | 99            | 100          | 1                   | 80          | Sí |
+| 3s     | 99            | 100          | 1                   | 80          | Sí |
+| 4s     | 99            | 100          | 1                   | 80          | Sí |
+| 5s     | 99            | 100          | 1                   | 80          | Sí |
 
 ### Explicación de la tabla
 
-Durante la baja perfusión se observó una ligera alteración en la onda fotopletismográfica.
+Durante la baja perfusión se observó una ligera alteración en la onda fotopletismográfica. Aunque la SpO₂ permaneció cercana al valor esperado, la señal puede presentar menor estabilidad debido a la disminución de amplitud simulada por el OxSim OX-1.
 
-Aunque la SpO₂ permaneció cercana al valor esperado, la señal PPG presentó menor estabilidad debido a la disminución de amplitud simulada por el OxSim.
-
+La alarma se activó porque el límite superior de SpO₂ estaba configurado en 97% y el valor simulado fue de 99%. Esta condición permite evidenciar cómo una señal de baja perfusión puede afectar la estabilidad de la lectura y generar posibles falsas alarmas o lecturas inestables [1], [3], [4].
 ---
 
 ## Caso 4 — Taquicardia
@@ -294,26 +320,31 @@ Estos errores se encuentran dentro de los límites clínicamente aceptables.
 
 ## Análisis 2 — Relación entre la onda PPG y las variables fisiológicas
 
-La onda fotopletismográfica depende directamente del flujo sanguíneo y de la perfusión periférica.
+La onda fotopletismográfica, también conocida como onda PPG, representa los cambios de volumen sanguíneo arterial detectados por el sensor de pulsioximetría. A partir de esta señal, el monitor puede estimar variables como la frecuencia de pulso y la saturación periférica de oxígeno SpO₂ [1], [3].
 
-Durante:
+Durante la práctica se observó que la frecuencia de la onda PPG cambia de acuerdo con la frecuencia cardíaca simulada. En el caso de bradicardia, con una frecuencia de 40 bpm, la onda presentó ciclos más separados entre sí, debido a que el pulso era más lento. En cambio, durante la simulación de taquicardia, con una frecuencia de 140 bpm, los ciclos de la onda se visualizaron más cercanos, ya que el pulso simulado era más rápido.
 
-* Bradicardia → la onda aparece más lenta.
-* Taquicardia → la onda aumenta su frecuencia.
-* Baja perfusión → la amplitud disminuye y la señal puede distorsionarse.
+En relación con la SpO₂, el valor de saturación no depende únicamente de la forma visual de la onda, sino del procesamiento interno que realiza el monitor a partir de la señal óptica recibida por el sensor. Sin embargo, la calidad de la onda PPG sí influye en la confiabilidad de la medición, porque una señal estable y con buena amplitud facilita una lectura más precisa de la saturación y de la frecuencia de pulso [1], [2].
 
-Esto demuestra que la señal PPG refleja el comportamiento hemodinámico del paciente.
+En el modo de baja perfusión, la onda PPG puede presentar menor amplitud, inestabilidad o distorsión. Esto ocurre porque se simula una condición en la que la señal pulsátil arterial es débil, lo que dificulta que el monitor identifique correctamente los cambios de volumen sanguíneo. Por esta razón, en condiciones de baja perfusión pueden presentarse lecturas inestables, errores en la SpO₂ o falsas alarmas [1], [3].
+
+En general, la onda PPG permitió relacionar visualmente el comportamiento del monitor con las condiciones fisiológicas simuladas. Una frecuencia cardíaca baja produjo una onda más lenta, una frecuencia cardíaca alta produjo una onda más rápida y la baja perfusión afectó principalmente la estabilidad y amplitud de la señal.
 
 ---
 
 # CONCLUSIONES
 
-* El monitor uMEC 100 respondió correctamente frente a todas las condiciones simuladas.
-* El OxSim OX-1 permitió recrear condiciones fisiológicas y patológicas de manera segura.
-* Los errores obtenidos fueron bajos y clínicamente aceptables.
-* Las alarmas visuales y sonoras funcionaron adecuadamente.
-* La condición de baja perfusión afectó principalmente la estabilidad de la onda fotopletismográfica.
-* La práctica permitió comprender la importancia de la calibración y verificación de equipos biomédicos.
+* El monitor uMEC 100 respondió adecuadamente frente a las condiciones simuladas de bradicardia, hipoxemia, baja perfusión y taquicardia.
+
+* El simulador Pronk OxSim OX-1 permitió generar escenarios fisiológicos y patológicos controlados, facilitando la evaluación funcional del monitor sin necesidad de utilizar pacientes reales.
+
+* Los errores obtenidos entre los valores simulados y los valores mostrados por el monitor fueron bajos, especialmente en la medición de frecuencia cardíaca, donde se obtuvo coincidencia directa en la mayoría de las pruebas.
+
+* Las alarmas visuales y sonoras se activaron correctamente cuando los valores simulados superaron los límites configurados, lo cual demuestra la importancia de una configuración adecuada de alarmas en el entorno clínico.
+
+* La baja perfusión afectó principalmente la estabilidad de la onda fotopletismográfica, evidenciando que la calidad de la señal es un factor importante para la confiabilidad de la medición de SpO₂.
+
+* La práctica permitió relacionar conceptos de instrumentación biomédica, pulsioximetría, simulación fisiológica, análisis de error y seguridad del paciente.
 
 ---
 
@@ -329,15 +360,28 @@ El simulador reproduce cambios periódicos similares al pulso arterial utilizand
 
 ## 2. ¿Por qué la SpO₂ baja puede ser un falso positivo en una situación de mala perfusión?
 
-En condiciones de baja perfusión, la amplitud de la señal fotopletismográfica disminuye considerablemente.
+En condiciones de baja perfusión, la amplitud de la señal fotopletismográfica disminuye porque llega menos volumen sanguíneo pulsátil a la zona donde está ubicado el sensor. Esto dificulta que el monitor diferencie correctamente la componente arterial pulsátil de otros componentes de la señal [1], [3].
 
-Esto ocasiona que el sensor tenga dificultades para detectar correctamente el pulso arterial, generando lecturas inestables o falsas alarmas de saturación baja.
-
-Por esta razón, una mala perfusión puede provocar falsos positivos aunque la oxigenación del paciente sea normal.
+Como consecuencia, el equipo puede generar lecturas inestables, valores erróneos de SpO₂ o falsas alarmas de saturación baja, aunque la oxigenación real del paciente no necesariamente esté alterada. Por esta razón, una alarma de SpO₂ debe interpretarse junto con la calidad de la onda PPG, el estado clínico del paciente y la correcta ubicación del sensor [1], [3], [5].
 
 ---
 
+
 # REFERENCIAS
+
+[1] ISO, “ISO 80601-2-61:2017 Medical electrical equipment — Particular requirements for basic safety and essential performance of pulse oximeter equipment,” International Organization for Standardization, 2017. [En línea]. Disponible: https://www.iso.org/standard/67963.html
+
+[2] J. G. Webster, Medical Instrumentation: Application and Design, 4th ed. Hoboken, NJ: John Wiley & Sons, 2010.
+
+[3] J. G. Webster, Design of Pulse Oximeters. Boca Raton, FL: CRC Press, 1997.
+
+[4] Pronk Technologies, “OX-1 OxSim Optical SpO₂ Pulse Oximeter Simulator,” Pronk Technologies. [En línea]. Disponible: https://www.pronktech.com/product/ox-1-oxsim-miniaturized-optical-spo2-pulse-oximeter-tester/
+
+[5] Mindray, “uMEC 100/120/150 Patient Monitor Datasheet,” Mindray. [En línea]. Disponible: https://healthtechghana.com/wp-content/uploads/2024/07/Datasheet_uMEC-100-120-150_20230628.pdf
+
+[6] Mindray, “uMEC Series Patient Monitor Safety and Performance Information,” Mindray. [En línea]. Disponible: https://www.mindray.com/content/dam/xpace/en/site/mdr-sscp/patient-monitor/umec-series-60-70-80-100-120-150-safety-and-performance-information.pdf
+
+[7] Universidad Militar Nueva Granada, “Guía de Preparación Práctica de Laboratorio: Simulación y Monitoreo de Variables Cardiovasculares y Hemodinámicas,” Laboratorio de Instrumentación Biomédica y Biosensores, 2025.
 
 
 
