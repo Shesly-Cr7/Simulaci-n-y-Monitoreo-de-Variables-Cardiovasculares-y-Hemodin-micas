@@ -100,6 +100,9 @@ La señal medida tiene dos componentes: una componente continua, asociada a teji
 
 En condiciones de baja perfusión periférica, movimiento del paciente, mala colocación del sensor o interferencia lumínica, la amplitud de la señal PPG puede disminuir o distorsionarse. Esto puede producir lecturas inestables o alarmas falsas, especialmente en pacientes con mala perfusión periférica [1], [3].
 
+<img width="1448" height="1086" alt="image" src="https://github.com/user-attachments/assets/03b5b56c-e855-4820-b78b-03cf828dc6d5" />
+
+
 
 ## Simulador Pronk OxSim OX-1
 
@@ -190,6 +193,9 @@ La evaluación realizada corresponde a una verificación funcional del monitor, 
 ---
 
 # PARTE B — PROCEDIMIENTO Y RESULTADOS
+
+<img width="1448" height="1086" alt="image" src="https://github.com/user-attachments/assets/aeac141e-c77e-426a-af9a-25873d7c9cc6" />
+
 ## Tabla general de verificación de alarmas
 
 | Prueba | Límite configurado | Valor simulado | ¿Alarma activa? | Tiempo de respuesta | Observación |
@@ -201,10 +207,16 @@ La evaluación realizada corresponde a una verificación funcional del monitor, 
 
 ## Caso 1 — Bradicardia
 
+<img width="1200" height="1600" alt="image" src="https://github.com/user-attachments/assets/3a392aad-e943-4f69-8a82-3582c11421be" />
+
+
 ### Configuración
 
 * BPM simulado: 40
 * SpO₂ simulado: 95%
+
+* <img width="1600" height="1200" alt="image" src="https://github.com/user-attachments/assets/8b6c0339-8e8f-4f5d-bad1-eb5411942f54" />
+
 
 ### Resultados
 
@@ -255,11 +267,16 @@ No se evidenciaron errores significativos.
 ## Caso 3 — Baja Perfusión
 
 ### Configuración
+<img width="1200" height="1600" alt="image" src="https://github.com/user-attachments/assets/670504a6-4f29-4dc3-af3c-4a4e7bf87168" />
+
 
 * Modo: Low Perfusion
 * SpO₂ simulada: 99%
 * BPM monitor: 80
 * Límite superior de alarma SpO₂: 97%
+
+* <img width="1600" height="1200" alt="image" src="https://github.com/user-attachments/assets/6a48081a-1ebe-41c1-bae1-a038271adb44" />
+
 
 ### Resultados
 
@@ -319,6 +336,11 @@ Estos errores se encuentran dentro de los límites clínicamente aceptables.
 ---
 
 ## Análisis 2 — Relación entre la onda PPG y las variables fisiológicas
+
+
+
+<img width="1448" height="1086" alt="image" src="https://github.com/user-attachments/assets/5e197319-fbcc-4b45-8695-98224d8404c7" />
+
 
 La onda fotopletismográfica, también conocida como onda PPG, representa los cambios de volumen sanguíneo arterial detectados por el sensor de pulsioximetría. A partir de esta señal, el monitor puede estimar variables como la frecuencia de pulso y la saturación periférica de oxígeno SpO₂ [1], [3].
 
