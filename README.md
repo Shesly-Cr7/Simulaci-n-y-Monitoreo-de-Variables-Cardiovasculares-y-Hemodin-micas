@@ -1,4 +1,4 @@
- # Laboratorio 6 Simulación y Monitoreo de Variables Cardiovasculares y Hemodinámicas
+ # Laboratorio 6: Simulación y Monitoreo de Variables Cardiovasculares y Hemodinámicas
 
 ## Universidad Militar Nueva Granada
 
@@ -70,12 +70,15 @@ La frecuencia cardíaca corresponde al número de latidos del corazón por minut
 
 Valores normales en adultos:
 
-| Condición   | BPM          |
-| ----------- | ------------ |
-| Bradicardia | < 60 BPM     |
-| Normal      | 60 – 100 BPM |
-| Taquicardia | > 100 BPM    |
+<div align="center">
 
+| Condición   | BPM          |
+|:-----------:|:------------:|
+| Bradicardia | < 60 BPM     |
+| Normal      | 60 – 100 BPM |
+| Taquicardia | > 100 BPM    |
+
+</div>
 ---
 
 ## Fotopletismografía (PPG)
@@ -100,8 +103,9 @@ La señal medida tiene dos componentes: una componente continua, asociada a teji
 
 En condiciones de baja perfusión periférica, movimiento del paciente, mala colocación del sensor o interferencia lumínica, la amplitud de la señal PPG puede disminuir o distorsionarse. Esto puede producir lecturas inestables o alarmas falsas, especialmente en pacientes con mala perfusión periférica [1], [3].
 
-<img width="1448" height="1086" alt="image" src="https://github.com/user-attachments/assets/03b5b56c-e855-4820-b78b-03cf828dc6d5" />
-
+<p align="center">
+  <img width="450" height="350" alt="image" src="https://github.com/user-attachments/assets/03b5b56c-e855-4820-b78b-03cf828dc6d5" />
+</p>
 
 
 ## Simulador Pronk OxSim OX-1
@@ -168,12 +172,16 @@ Para colocar el uMEC 100 en modo monitor se debe:
 
 El Pronk OxSim OX-1 es un simulador óptico de SpO₂ utilizado para verificar el funcionamiento de pulsioxímetros, sensores de SpO₂, cables de extensión y monitores de signos vitales. Este equipo permite simular señales ópticas similares a las generadas por un paciente real, de manera que el sensor del monitor pueda interpretar valores de saturación, frecuencia de pulso y perfusión [4].
 
+<div align="center">
+
 | Variable simulada | Descripción |
 | ----------------- | ----------- |
 | SpO₂ | Simula diferentes valores de saturación periférica de oxígeno. En la práctica se utilizaron valores como 85%, 95%, 98% y 99%. |
 | Frecuencia cardíaca / pulso | Simula diferentes frecuencias de pulso, como 40 bpm para bradicardia, 80 bpm como condición normal y 140 bpm para taquicardia. |
 | Índice de perfusión | Permite simular condiciones de perfusión normal o baja perfusión. En baja perfusión, la amplitud de la señal PPG disminuye y el monitor puede presentar lecturas menos estables. |
 | Condiciones fisiológicas y patológicas | A partir de la combinación de SpO₂, frecuencia de pulso y perfusión, se pueden representar escenarios como hipoxemia, bradicardia, taquicardia y baja perfusión periférica. |
+
+</div>
 
 ---
 
@@ -182,28 +190,39 @@ El Pronk OxSim OX-1 es un simulador óptico de SpO₂ utilizado para verificar e
 
 En esta práctica, los errores se evaluaron comparando el valor configurado en el simulador OxSim OX-1 con el valor mostrado por el monitor uMEC 100. Esta comparación permite verificar funcionalmente si el monitor responde de forma adecuada ante condiciones simuladas.
 
+<div align="center">
+
 | Parámetro evaluado | Criterio usado en la práctica | Interpretación |
-| ------------------ | ----------------------------- | -------------- |
+| :--- | :--- | :--- |
 | Frecuencia cardíaca / pulso | Diferencias pequeñas, cercanas a ±3 bpm | Aceptable si no cambia la interpretación de bradicardia, normalidad o taquicardia |
 | SpO₂ | Diferencias aproximadas de ±2% | Aceptable para una verificación funcional de pulsioximetría |
 | Alarmas | Activación visual y/o sonora ante valores fuera de límite | Deben activarse cuando el valor simulado supera el límite configurado |
 | Onda PPG | Observación cualitativa de amplitud, estabilidad y distorsión | Permite analizar la calidad de la señal y el efecto de la perfusión |
 
+</div>
+
 La evaluación realizada corresponde a una verificación funcional del monitor, no a una calibración metrológica completa. Por esta razón, los errores se interpretaron como diferencias entre el valor simulado y el valor mostrado por el equipo [1], [4], [5].
+
 ---
 
 # PARTE B — PROCEDIMIENTO Y RESULTADOS
+<p align="center">
+ <img width="750" height="450" alt="image" src="https://github.com/user-attachments/assets/aeac141e-c77e-426a-af9a-25873d7c9cc6" />
+</p>
 
-<img width="1448" height="1086" alt="image" src="https://github.com/user-attachments/assets/aeac141e-c77e-426a-af9a-25873d7c9cc6" />
 
 ## Tabla general de verificación de alarmas
 
+<div align="center">
+
 | Prueba | Límite configurado | Valor simulado | ¿Alarma activa? | Tiempo de respuesta | Observación |
-| ------ | ------------------ | -------------- | --------------- | ------------------- | ----------- |
+| :--- | :--- | :--- | :--- | :--- | :--- |
 | Bradicardia | Límite inferior de FC configurado en el monitor | 40 bpm, SpO₂ 95% | No registrado | No registrado | Se observó frecuencia cardíaca baja en el monitor |
 | Hipoxemia | SpO₂ baja: 90% | 80 bpm, SpO₂ 85% | Sí | 5 s | Se activó la alarma por saturación baja |
 | SpO₂ alta / baja perfusión | SpO₂ alta: 97% | SpO₂ 99% en modo Low Perfusion | Sí | 5 s | Se observó alteración o disminución de la estabilidad de la onda PPG |
 | Taquicardia | Límite superior de FC configurado en el monitor | 140 bpm | Sí | No registrado | Se activó la alarma por frecuencia cardíaca elevada |
+
+</div>
 
 ## Caso 1 — Bradicardia
 
@@ -211,9 +230,9 @@ La evaluación realizada corresponde a una verificación funcional del monitor, 
 
 ### Configuración
 
-
-<img width="1448" height="1086" alt="image" src="https://github.com/user-attachments/assets/41725158-61f1-426e-b0eb-331e0307aec6" />
-
+<p align="center">
+<img width="750" height="450" alt="image" src="https://github.com/user-attachments/assets/41725158-61f1-426e-b0eb-331e0307aec6" />
+</p>
 
 * BPM simulado: 40
 * SpO₂ simulado: 95%
@@ -221,14 +240,17 @@ La evaluación realizada corresponde a una verificación funcional del monitor, 
 
 
 ### Resultados
+<div align="center">
 
 | Tiempo | BPM Simulado | BPM Monitor | Error BPM | SpO₂ Simulada | SpO₂ Monitor | Error SpO₂ |
 | ------ | ------------ | ----------- | --------- | ------------- | ------------ | ---------- |
-| 1s     | 40           | 40          | 0         | 95            | 96           | -1         |
-| 2s     | 40           | 40          | 0         | 95            | 96           | -1         |
-| 3s     | 40           | 40          | 0         | 95            | 96           | -1         |
-| 4s     | 40           | 40          | 0         | 95            | 96           | -1         |
-| 5s     | 40           | 40          | 0         | 95            | 96           | -1         |
+| 1s     | 40           | 40          | 0         | 95            | 96           | -1         |
+| 2s     | 40           | 40          | 0         | 95            | 96           | -1         |
+| 3s     | 40           | 40          | 0         | 95            | 96           | -1         |
+| 4s     | 40           | 40          | 0         | 95            | 96           | -1         |
+| 5s     | 40           | 40          | 0         | 95            | 96           | -1         |
+
+</div>
 
 ### Explicación de la tabla
 
@@ -248,13 +270,17 @@ La saturación presentó una diferencia mínima de 1%, lo cual se encuentra dent
 
 ### Resultados
 
+<div align="center">
+
 | Tiempo | BPM Simulado | BPM Monitor | Error BPM | SpO₂ Simulada | SpO₂ Monitor | Error SpO₂ |
-| ------ | ------------ | ----------- | --------- | ------------- | ------------ | ---------- |
-| 1s     | 80           | 80          | 0         | 85            | 85           | 0          |
-| 2s     | 80           | 80          | 0         | 85            | 85           | 0          |
-| 3s     | 80           | 80          | 0         | 85            | 85           | 0          |
-| 4s     | 80           | 80          | 0         | 85            | 85           | 0          |
-| 5s     | 80           | 80          | 0         | 85            | 85           | 0          |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| 1s | 80 | 80 | 0 | 85 | 85 | 0 |
+| 2s | 80 | 80 | 0 | 85 | 85 | 0 |
+| 3s | 80 | 80 | 0 | 85 | 85 | 0 |
+| 4s | 80 | 80 | 0 | 85 | 85 | 0 |
+| 5s | 80 | 80 | 0 | 85 | 85 | 0 |
+
+</div>
 
 ### Explicación de la tabla
 
@@ -269,32 +295,40 @@ No se evidenciaron errores significativos.
 ## Caso 3 — Baja Perfusión
 
 ### Configuración
-<img width="1200" height="1600" alt="image" src="https://github.com/user-attachments/assets/670504a6-4f29-4dc3-af3c-4a4e7bf87168" />
 
+<p align="center">
+<img width="400" height="450" alt="image" src="https://github.com/user-attachments/assets/670504a6-4f29-4dc3-af3c-4a4e7bf87168" />
+</p>
 
 * Modo: Low Perfusion
 * SpO₂ simulada: 99%
 * BPM monitor: 80
 * Límite superior de alarma SpO₂: 97%
 
-* <img width="1600" height="1200" alt="image" src="https://github.com/user-attachments/assets/6a48081a-1ebe-41c1-bae1-a038271adb44" />
-
+<p align="center">
+<img width="500" height="400" alt="image" src="https://github.com/user-attachments/assets/6a48081a-1ebe-41c1-bae1-a038271adb44" />
+</p>
 
 ### Resultados
 
+<div align="center">
+
 | Tiempo | SpO₂ Simulada | SpO₂ Monitor | Error absoluto SpO₂ | BPM Monitor | ¿Alarma activa? |
-| ------ | ------------- | ------------ | ------------------- | ----------- | --------------- |
-| 1s     | 99            | 100          | 1                   | 80          | Sí |
-| 2s     | 99            | 100          | 1                   | 80          | Sí |
-| 3s     | 99            | 100          | 1                   | 80          | Sí |
-| 4s     | 99            | 100          | 1                   | 80          | Sí |
-| 5s     | 99            | 100          | 1                   | 80          | Sí |
+| :---: | :---: | :---: | :---: | :---: | :---: |
+| 1s | 99 | 100 | 1 | 80 | Sí |
+| 2s | 99 | 100 | 1 | 80 | Sí |
+| 3s | 99 | 100 | 1 | 80 | Sí |
+| 4s | 99 | 100 | 1 | 80 | Sí |
+| 5s | 99 | 100 | 1 | 80 | Sí |
+
+</div>
 
 ### Explicación de la tabla
 
 Durante la baja perfusión se observó una ligera alteración en la onda fotopletismográfica. Aunque la SpO₂ permaneció cercana al valor esperado, la señal puede presentar menor estabilidad debido a la disminución de amplitud simulada por el OxSim OX-1.
 
 La alarma se activó porque el límite superior de SpO₂ estaba configurado en 97% y el valor simulado fue de 99%. Esta condición permite evidenciar cómo una señal de baja perfusión puede afectar la estabilidad de la lectura y generar posibles falsas alarmas o lecturas inestables [1], [3], [4].
+
 ---
 
 ## Caso 4 — Taquicardia
@@ -306,13 +340,17 @@ La alarma se activó porque el límite superior de SpO₂ estaba configurado en 
 
 ### Resultados
 
+<div align="center">
+
 | Tiempo | BPM Simulado | BPM Monitor | Error BPM | SpO₂ Simulada | SpO₂ Monitor | Error SpO₂ |
-| ------ | ------------ | ----------- | --------- | ------------- | ------------ | ---------- |
-| 1s     | 140          | 140         | 0         | 98            | 99           | -1         |
-| 2s     | 140          | 140         | 0         | 98            | 99           | -1         |
-| 3s     | 140          | 140         | 0         | 98            | 98           | 0          |
-| 4s     | 140          | 140         | 0         | 98            | 98           | 0          |
-| 5s     | 140          | 140         | 0         | 98            | 99           | -1         |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| 1s | 140 | 140 | 0 | 98 | 99 | -1 |
+| 2s | 140 | 140 | 0 | 98 | 99 | -1 |
+| 3s | 140 | 140 | 0 | 98 | 98 | 0 |
+| 4s | 140 | 140 | 0 | 98 | 98 | 0 |
+| 5s | 140 | 140 | 0 | 98 | 99 | -1 |
+
+</div>
 
 ### Explicación de la tabla
 
@@ -340,9 +378,9 @@ Estos errores se encuentran dentro de los límites clínicamente aceptables.
 ## Análisis 2 — Relación entre la onda PPG y las variables fisiológicas
 
 
-
-<img width="1448" height="1086" alt="image" src="https://github.com/user-attachments/assets/5e197319-fbcc-4b45-8695-98224d8404c7" />
-
+<p align="center">
+<img width="500" height="400" alt="image" src="https://github.com/user-attachments/assets/5e197319-fbcc-4b45-8695-98224d8404c7" />
+</p>
 
 La onda fotopletismográfica, también conocida como onda PPG, representa los cambios de volumen sanguíneo arterial detectados por el sensor de pulsioximetría. A partir de esta señal, el monitor puede estimar variables como la frecuencia de pulso y la saturación periférica de oxígeno SpO₂ [1], [3].
 
@@ -406,6 +444,3 @@ Como consecuencia, el equipo puede generar lecturas inestables, valores erróneo
 [6] Mindray, “uMEC Series Patient Monitor Safety and Performance Information,” Mindray. [En línea]. Disponible: https://www.mindray.com/content/dam/xpace/en/site/mdr-sscp/patient-monitor/umec-series-60-70-80-100-120-150-safety-and-performance-information.pdf
 
 [7] Universidad Militar Nueva Granada, “Guía de Preparación Práctica de Laboratorio: Simulación y Monitoreo de Variables Cardiovasculares y Hemodinámicas,” Laboratorio de Instrumentación Biomédica y Biosensores, 2025.
-
-
-
