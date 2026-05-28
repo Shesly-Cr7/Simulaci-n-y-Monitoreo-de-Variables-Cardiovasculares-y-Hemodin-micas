@@ -1,4 +1,4 @@
- # Laboratorio 5: Simulación y Monitoreo de Variables Cardiovasculares y Hemodinámicas
+ # Laboratorio 6 Simulación y Monitoreo de Variables Cardiovasculares y Hemodinámicas
 
 ## Universidad Militar Nueva Granada
 
